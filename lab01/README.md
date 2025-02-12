@@ -35,7 +35,7 @@
     mv debian.iso lab01/dvd/
     ```
 
-![[{2B277861-39B8-47AB-9AE8-E239EFF5EEB7}.png]]
+![alt text]({2B277861-39B8-47AB-9AE8-E239EFF5EEB7}.png)
 ### Установка Debian в виртуальную машину
 
 Скачиваю дистрибутив Debian на Ubuntu 24.04 LTS при помощи команды wget
@@ -43,7 +43,7 @@
 wget https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.9.0-amd64-DVD-1.iso
 ```
 
-![[{823DAC8C-8072-4EE7-9E9F-6A9C65359F24}.png]]
+![alt text]({823DAC8C-8072-4EE7-9E9F-6A9C65359F24}.png)
 
 Далее устанавливаю qemu
 
@@ -57,7 +57,7 @@ sudo apt install qemu-system
 qemu-img create -f qcow2 debian.qcow2 8G
 ```
 
-![[{5A065C1F-3F33-4D14-A5B1-6BE4DDDF36EF}.png]]
+![alt text]({5A065C1F-3F33-4D14-A5B1-6BE4DDDF36EF}.png)
 
 ввожу 
 ```bash
@@ -65,17 +65,17 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
 ```
 
 и открывается окно qemu:
-![[{6FB70A32-34FC-40B2-854F-497B3F245790}.png]]
+![alt text]({6FB70A32-34FC-40B2-854F-497B3F245790}.png)
 
 Я устанавливаю ОС Debian, указывая параметры установки: я задаю хостовое имя `debian.localhost`, создаю пользователя под именем `user`, и назначаю ему пароль `password`.
-![[{B75FD5F9-0263-4A38-A6EE-0EBB834F8A84} 1.png]]
-![[{D51824A6-E049-4A56-80E3-3A263AC7DE65}.png]]
+![alt text]({B75FD5F9-0263-4A38-A6EE-0EBB834F8A84} 1.png)
+![alt text]({D51824A6-E049-4A56-80E3-3A263AC7DE65}.png)
 
 Я выбрал пункт `All files in one partition (recommended for new users)`. Этот вариант создаёт одну общую партицию для всех данных, что удобно и рекомендуется для новых пользователей.
-![[{46673C1E-6CFA-4F68-8888-BCC12CDE59D7}.png]]
+![alt text]({46673C1E-6CFA-4F68-8888-BCC12CDE59D7}.png)
 
 процесс установки
-![[{614773E9-C810-4F1A-B06D-C2A894B5ABDB}.png]]
+![alt text]({614773E9-C810-4F1A-B06D-C2A894B5ABDB}.png)
 
 ### Запуск виртуальной машины и настройка сети
 
@@ -83,14 +83,14 @@ qemu-system-x86_64 -hda debian.qcow2 -cdrom dvd/debian.iso -boot d -m 2G
 qemu-system-x86_64 -hda debian.qcow2 -m 2G -smp 2 -device e1000,netdev=net0 \
 -netdev user,id=net0,hostfwd=tcp::1080-:80,hostfwd=tcp::1022-:22
 ```
-![[{95B9FF53-5E2F-4DCC-B7E4-3C661896DF86}.png]]
+![alt text]({95B9FF53-5E2F-4DCC-B7E4-3C661896DF86}.png)
 ### Установка LAMP
 ```bash
 su
 apt update -y
 apt install -y apache2 php libapache2-mod-php php-mysql mariadb-server mariadb-client unzip
 ````
-![[{E03A039C-26C4-4CCE-9651-3659C6E4B531} 1.png]]
+![alt text]({E03A039C-26C4-4CCE-9651-3659C6E4B531} 1.png)
 
 ### Установка PhpMyAdmin и Drupal
 ```bash
@@ -98,8 +98,8 @@ wget https://files.phpmyadmin.net/phpMyAdmin/5.2.2/phpMyAdmin-5.2.2-all-language
 wget https://ftp.drupal.org/files/projects/drupal-11.1.1.zip
 ```
 
-![[{0153BA72-B61B-4B53-81FE-35AAE8653F9E}.png]]
-![[{DF99DA37-7649-44D6-9BA5-BBB69804302E}.png]]
+![alt text]({0153BA72-B61B-4B53-81FE-35AAE8653F9E}.png)
+![alt text]({DF99DA37-7649-44D6-9BA5-BBB69804302E}.png)
 
 Распаковка файлов:
 ```bash
@@ -110,23 +110,23 @@ unzip drupal-11.1.1.zip -d /var/www/
 mv /var/www/drupal-11.1.1 /var/www/drupal
 ```
 
-![[{805A303F-A804-4B0C-8490-0D3BDF84AB21}.png]]
+![alt text]({805A303F-A804-4B0C-8490-0D3BDF84AB21}.png)
 
 ### Настройка базы данных для Drupal
 
-![[{BB47F58F-D588-4C36-9A8A-FD21D2A33526}.png]]
+![alt text]({BB47F58F-D588-4C36-9A8A-FD21D2A33526}.png)
 
 ### Настройка виртуальных хостов Apache
 
 Создание файла `/etc/apache2/sites-available/01-phpmyadmin.conf`:
-![[{BEA33B23-524F-4320-9C35-709F79244563}.png]]
+![alt text]({BEA33B23-524F-4320-9C35-709F79244563}.png)
 
 Создание файла `/etc/apache2/sites-available/02-drupal.conf`:
-![[{B2BF35E7-6FD1-4FAA-843F-7C169EDB9728}.png]]
+![alt text]({B2BF35E7-6FD1-4FAA-843F-7C169EDB9728}.png)
 
 ### Включение конфигураций и перезапуск Apache
 
-![[{A13307B4-5218-4B7B-8430-BFEBD2E8CF8E}.png]]
+![alt text]({A13307B4-5218-4B7B-8430-BFEBD2E8CF8E}.png)
 
 Добавление записей в `/etc/hosts`:
 ```bash
@@ -135,25 +135,25 @@ echo "127.0.0.1 drupal.localhost" >> /etc/hosts
 ```
 
 ### Запуск и тестирование
-![[{61510792-EB0A-4B8C-9213-70CF2B64AC23}.png]]
+![alt text]({61510792-EB0A-4B8C-9213-70CF2B64AC23}.png)
 Выводится полная информация о системе
 ОС, хостнэйм, версия ядра, версия сборки ядра, дистрибутив, архитектура, полное название операционной системы.
 
 Перезагрузка вебсервера происходит при помощи рестрарта его сервиса 
-![[{DA7DC786-9C00-43B3-96A9-FC8695BE2EAE}.png]]
+![alt text]({DA7DC786-9C00-43B3-96A9-FC8695BE2EAE}.png)
 
 ### Результат
 Пример доступности сайтов
 `http://drupal.localhost:1080`
 `http://phpmyadmin.localhost:1080`
 
-![[{AAC6BAA8-71D5-4CE7-8274-54A830EE1AC9}.png]]
+![alt text]({AAC6BAA8-71D5-4CE7-8274-54A830EE1AC9}.png)
 упсс...
-![[{81CFD541-9EE0-4DAC-B8B7-77B0341BA8BA}.png]]
+![alt text]({81CFD541-9EE0-4DAC-B8B7-77B0341BA8BA}.png)
 
 
-![[Pasted image 20250210161741.png]]
-![[{5D9769B4-6B8D-4578-8F5F-82F9D0CF8CC7}.png]]
+![alt text](Pasted image 20250210161741.png)
+![alt text]({5D9769B4-6B8D-4578-8F5F-82F9D0CF8CC7}.png)
 
 # **Ответы на поставленные вопросы**
 1. **Как скачать файл через** wget?
