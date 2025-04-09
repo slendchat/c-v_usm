@@ -161,6 +161,3 @@ CONTAINER ID   IMAGE         COMMAND                  STATUS       PORTS        
 704448400a82   mysql:8.0     "docker-entrypoint.s…"   Up 19s       3306/tcp, 33060/tcp                 lab07-database-1
 862431f68778   nginx:1.19    "/docker-entrypoint.…"   Up 18s       0.0.0.0:80->80/tcp, :::80->80/tcp   lab07-frontend-1
 ```
-
-## Репозиторий проекта
-Ссылка на репозиторий с проектом: [GitHub](https://github.com/your_username/containers06)
