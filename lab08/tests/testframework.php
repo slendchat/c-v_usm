@@ -33,10 +33,12 @@ class TestFramework {
     public function run() {
         foreach ($this->tests as $name => $test) {
             info("Running test {$name}");
-            if ($test()) {
+            $res = $test();
+            if ($res) {
                 $this->success++;
             }
             info("End test {$name}");
+            info("Test result {$res}");
         }
     }
 
