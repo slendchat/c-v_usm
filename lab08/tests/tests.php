@@ -31,7 +31,7 @@ function testDbCount() {
 
     $db->Execute("INSERT INTO test_table (name, value) VALUES ('test', 123)");
     $count = $db->Count("test_table");
-    return ($count === 1);
+    return ((int)$count === 1);
 }
 
 // test 3: test create method
