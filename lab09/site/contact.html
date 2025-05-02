@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="img/cthulhu.png" type="image/png">
+    <title>BOOKSTY</title>
+    <title>Document</title>
+</head>
+<style>
+.divTable{
+    display: table;
+    width: 100%;
+    border: 0px;
+
+}
+.divTableRow {
+	display: table-row;
+    width: 100%;
+}
+.divTableCell{
+	display: table-cell;
+    text-align: left;
+
+}
+.parent {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 420px 0.1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+border-style: solid;
+border-width: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 2 / 3 / 3; }
+.div4 { grid-area: 2 / 1 / 3 / 2; }
+
+@media screen and (max-width: 1300px) {
+    .parent{
+      display: inline;
+    }
+  }
+</style>
+
+<body>
+  <!--############################ HEADER ############################-->
+  <div class="nav-menu">
+    <nav class="navClass">
+      <div class="menuContainer">
+        <div class="namediv">
+            <a href="index.html">
+                <img src="img/cthulhu.png" width="46px" height: auto;>
+            </a>
+            <a href="index.html" class="siteName">
+                BOOKSTY
+            </a>
+        </div>
+
+        <label id="burger-icon" for="burger-checkbox">
+          <input type="checkbox" id="burger-checkbox" class="checkbox">
+        <div class="menu">
+          <a href="index.html">Главная</a>
+          <a href="genres.html">Жанры</a>
+          <a href="manga.html">Манга гайд</a>
+          <a href="about.html">О нас</a>
+          <a href="contact.html">Контакты</a>
+        </div>
+      </label>
+      <div class="menu">
+          <a href="index.html">Главная</a>
+          <a href="genres.html">Жанры</a>
+          <a href="manga.html">Манга гайд</a>
+          <a href="about.html">О нас</a>
+          <a href="contact.html">Контакты</a>
+      </div>
+    </div>
+      </nav>
+    
+    </div>
+
+    <!--############################ BANNER ############################-->
+    <div class="banner">
+      <div style="text-align: left;">
+          <h1>Откройте мир литературы с нами</h1> 
+          <p>
+              Откройте для себя захватывающие жанры литературы. <br>
+              Получите рекомендации по лучшим книгам. <br>
+              Исследуйте страницы с описанием каждого жанра. <br>
+              Узнайте, что читать, и найдите советы по улучшению вашего чтения. <br>
+              Наш гайд поможет вам погрузиться в увлекательный мир манги. <br>
+              Приготовьтесь к приключению с <b>BOOKSTY</b>!"
+          </p>
+      </div>
+      <div class="contChev">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <span class="text">Scroll down</span>
+      </div>
+    </div>
+    
+    
+    
+    
+    <div class="containerMain" style="text-align: center;">
+      <h1>Свяжитесь с нами по почте!</h1>
+      <h2>Для этого всего лишь нужно заполнить форму и нажать отправить</h2>
+
+
+
+
+<form>
+      
+<div style="width: 50%; margin: auto;padding-bottom: 20px;">
+  <fieldset>
+  <legend><b>Свяжитесь с нами</b></legend>
+
+
+<div class="parent"><!--PARENT-->
+    <div class="div1"><!--DIV1-->
+      <fieldset>
+      <legend>Контактная информация</legend>
+        <div class="divTable">
+
+          <div class="divTableRow">
+            <div class="divTableCell">
+              <p>Имя*</p>
+            </div>
+            <div class="divTableCell">
+              <input type="text" pattern="[a-zA-Z]*" required>
+            </div>
+          </div>
+          
+          <div class="divTableRow">
+            <div class="divTableCell">
+              <p>Фамилия*</p>
+            </div>
+            <div class="divTableCell">
+              <input type="text" pattern="[a-zA-Z]*" required>
+            </div>
+          </div>
+          
+          <div class="divTableRow">
+            <div class="divTableCell">
+              <p>Email*</p>
+            </div>
+            <div class="divTableCell">
+              <input type="text" pattern="[a-zA-Z]*" required>
+            </div>
+          </div>
+          
+          <div class="divTableRow">
+            <div class="divTableCell">
+              <p>Дата рождения</p>
+            </div>
+            <div class="divTableCell">
+              <input type="date">
+            </div>
+          </div>
+
+
+        <div class="divTableRow">
+          <div class="divTableCell">
+            <p>Номер</p>
+          </div>
+          <div class="divTableCell">
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="divTableRow">
+          <div class="divTableCell">
+            <p>Пол</p>
+          </div>
+          <div class="divTableCell">
+            <span><input type="radio" value="F" name="sex"/><b>F</b></span>                              
+            <span><input type="radio" value="M" name="sex"/><b>M</b></span>
+          </div>
+        </div>
+
+      
+      <div class="divTableRow">
+        <div class="divTableCell">
+          <p>Дополнительно</p>
+        </div>
+        <div class="divTableCell">
+          <textarea name="suplimentar" id="suplimentar" placeholder="Пиши тут" maxlength="1000" draggable="false" style="resize: none; height: 60px;"></textarea>
+        </div>
+      </div>
+
+        </div>
+      </fieldset>
+    </div><!--DIV1-->
+
+
+    <div class="div2"><!--DIV2-->
+      <fieldset>
+      <legend>Ваше сообщение</legend>
+        <textarea name="suplimentar" id="suplimentar" placeholder="Пиши тут" maxlength="1000" draggable="false" style="resize: none; width: 100%; height: 376px;"></textarea>
+      </fieldset>
+    </div><!--DIV2-->
+
+    <div class="div3" style="text-align: right; transform: translateY(30%)"><!--DIV3-->
+      <button type="reset">Сброс</button>
+      <button type="submit" formmethod="get">Отправить</button>
+    </div><!--DIV3-->
+
+    <div class="div4" style="text-align: left;"><!--DIV4-->
+      <p>*Поле должно быть заполнено</p> 
+    </div><!--DIV4-->
+
+
+</div><!--PARENT-->
+      
+</fieldset>
+</div>
+</form>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+    <div class="MangaBanner">
+      <h1>Узнайте как правильно читать мангу</h1>
+      <a href="manga.html" class="cta-button">Перейти к гайду</a>
+  </div>
+
+<!--###################### FOOTER ####################-->
+
+<footer>
+<div class="social-links">
+<a href="https://www.facebook.com/slendchat/?locale=ru_RU" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+<a href="https://www.youtube.com/channel/UCibU1sTxFNn7PoGKFuuFFwA" target="_blank"><img src="img/YouTube.png" alt="YouTube"></a>
+<a href="https://www.instagram.com/lure87011/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+</div>
+
+<div class="rules-policy">
+<p><a href="about.html">Правила использования сайта</a> | <a href="privacy.html">Политика конфиденциальности</a></p>
+</div>
+
+<div class="contact-info">
+<p>Контактная информация: artmamaliga8@gmail.com</p>
+</div>
+</footer>
+
+</body>
+</html>
+
+</body>
+</html>

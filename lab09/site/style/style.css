@@ -1,0 +1,474 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: ghostwhite;
+  }
+
+.containerMain{
+  margin: 0 auto;
+  width: 70%;
+  background-color: #fff;
+}
+
+.nav-menu{
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+}
+
+.navClass {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+
+  .menu {
+    flex-direction: row;
+    background-color: #555;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    z-index: 1;
+    position: static;
+    background-color: #333;
+  }
+  
+  .menuContainer{
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu a {
+    font-size: 22px;
+    margin-right: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .menu a:hover {
+    background-color: #777;
+  }
+
+  #burger-checkbox {
+    display: none;
+  }
+
+  #burger-icon {
+    display: block;
+    cursor: pointer;
+    display: none;
+  }
+
+  #burger-icon::before {
+    content: "\2630";
+    font-size: 36px;
+  }
+
+  #burger-checkbox:checked + .menu {
+    display: flex;
+  }
+
+
+
+.checkbox:checked ~ .menu {
+display: block;
+}
+
+
+.namediv{
+    display: flex;
+    align-items: center;
+}
+
+.siteName{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    font-size: 36px;
+    vertical-align: middle;
+    padding-left: 10px;
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer;
+}
+a img {
+    display: block; /* Убираем промежуток под изображением */
+}
+
+.marginDiv{
+  background-color: #777;
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+/*  ###########BANNER###########  */
+.banner {
+  /*background-image: url('../img/wallhaven-39qjjd.jpg'); */
+  padding-top: 60px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/wallhaven-39qjjd.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.banner h1 {
+  font-size: 48px;
+  margin: 0;
+}
+.banner p{
+  
+  font-size: 18px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+
+/*################################## RECOMENDATIONS ##################################*/
+
+.recommendations {
+  padding: 20px;
+  text-align: center;
+  height: 500px;
+}
+
+.recommendations h2{
+  color: #000;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  height: 440px;
+}
+
+.book {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 400px;
+  width: 350px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.book:hover {
+  transform: scale(1.1);
+}
+
+.book img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+}
+
+.book p {
+  padding: 10px;
+  margin: 0;
+}
+
+
+
+/*####################### GENRES ########################## */
+
+.genreContent{
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  background: linear-gradient(to left, transparent, #fff), 
+  url('../img/lc_back2.jpg') right top / cover no-repeat;
+  background-color:#333;
+  background-position: right;
+  display: grid;
+  grid-template-columns: 60% 1fr; 
+  height: min-content;
+}
+
+.best-genres {
+  padding: 20px;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.best-genres a{
+  text-decoration: none; 
+  color: black;
+}
+
+.genre {
+  display: inline-block;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.genre:hover {
+  transform: scale(1.1);
+}
+
+.genre img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+}
+
+.genre p {
+  padding: 10px;
+  margin: 0;
+}
+
+
+/*####################### TIPS ########################## */
+
+.grid-containerTips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding-top: 20px;
+}
+
+.tip {
+  background-color: #fff;
+  height: 1fr;
+  overflow: hidden;
+}
+
+.tip img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+.tip h3{
+  font-size: 26px;
+}
+
+.tip-content {
+  padding: 20px;
+}
+
+/*####################### MANGA GUIDE ########################## */
+.MangaBanner {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('../img/manga.jpg');
+}
+
+.MangaBanner h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 26px;
+  text-decoration: none;
+  background-color: #ff5733;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #ff8243;
+}
+
+
+
+/* ################## FOOTER ################# */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-links {
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.social-links img {
+  width: auto; 
+  height: 30px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.rules-policy,
+.contact-info {
+  margin-top: 20px;
+}
+
+.rules-policy a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: 1300px){
+    .menuContainer{
+      width: 100%;
+    }
+    .containerMain{
+      width: 100%;
+    }
+
+  }
+  @media screen and (max-width: 1300px) {
+    #burger-icon {
+      display: block;
+      cursor: pointer;
+    }
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #555;
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      z-index: 1;
+    }
+  
+    .menu a {
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .genreContent{
+      grid-template-columns: 100% 1fr; /* 2 части слева и 1 часть справа */
+    }
+  }
+  @media screen and (min-width: 1301px) {
+    #burger-checkbox {
+      display: none;
+    }
+
+    #burger-icon {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      position: static;
+    }
+
+  }
+
+  :target::before {
+    content: "";
+    display: block;
+    height: 100px; /* Высота компенсации */
+    margin-top: 0px; /* Отрицательный отступ для компенсации */
+}
+
+  /*ANIMATION*/
+
+  .contChev {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transform: translateY(500%);
+  }
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+  .chevron:before,
+  .chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+  }
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  } 
+  @keyframes move {
+    25% {
+      opacity: 1;
+  
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+  .text {
+    display: block;
+    margin-top: 75px;
+    margin-left: -30px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+  }
+  
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
